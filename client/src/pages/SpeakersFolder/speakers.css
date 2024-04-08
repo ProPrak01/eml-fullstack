@@ -1,0 +1,153 @@
+.speakers {
+  background-color: var(--primary-color);
+  /* background-image: url(../../Images/speaker/speaker-page-bg.png); */
+  padding-top: 8rem;
+  background-size: repeat-y;
+}
+
+.speakers .card img {
+  margin: 2rem auto 0 auto;
+  border-radius: 0.5rem;
+  object-fit: cover;
+ height: 350px;
+  min-width: 250px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.speakers .card img:hover {
+  border: 2px solid var(--secondary-color);;
+  
+}
+
+
+.speakers .card {
+  border-radius: 1rem;
+  padding: 0 2rem;
+  
+  background-image: url(../../Images/speaker/speaker-bg.png);
+  background-size: cover;
+  background-position: center;
+}
+.speakers .card:hover {
+  transform: translateY(-5px);
+  /* background-color: red; */
+  /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+.speakers .card h1 {
+  color: black;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.speakers .card h4 {
+  color: rgba(35, 33, 33, 0.936);
+  font-size: 1.2rem;
+  margin: 0rem 0 0.4rem 0;
+  font-weight: 500;
+}
+
+.speakers .card p {
+  margin-bottom: 2rem;
+}
+
+.speakers .card button {
+  position: absolute;
+  bottom: 1.5rem;
+}
+
+
+.speakers .card {
+  padding-bottom: 2rem;
+  margin: 1.5rem 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.448) 0px 3px 3px 0px;
+}
+.speakers .card .text {
+  padding: 2rem 2rem 1rem 2rem;
+  /* padding-left: 30rem; */
+}
+
+.wrapper {
+  padding: 0rem 0;
+  margin: 3rem 0;
+}
+.speaker-container {
+  width: 85%;
+  margin: auto;
+}
+
+.wrapper .img-fluid {
+  width: auto;
+}
+
+.wrapper .image-class {
+  display: flex;
+  justify-content: center;
+}
+.wrapper .row {
+  padding: 3rem 0rem;
+}
+
+.big-wrapper {
+  /* background-color: #e2e1e1da; */
+  background-image: url(../../Images/speaker/wrapper-bg.png);
+  background-size: contain;
+  padding: 2rem 5px 10rem 5px;
+  border-radius: 9px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  max-width: 90%;
+  /* justify-content: center; */
+  margin: auto;
+}
+
+.speakers .card .main-btn {
+  color: white;
+  background-color: #25252e;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  padding: 0.5rem 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.speakers .card .main-btn:hover {
+  background-color: rgba(5, 5, 27, 0.984);
+  
+  border: 0.7px solid #cc941c;
+}
+
+.speakers .card .main-btn span {
+  font-size: 19px;
+  margin-right: 2px;
+}
+
+.speakers a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+@media (max-width: 576px) {
+  .speaker-container {
+    /* background-color: red; */
+    width: 100%;
+    margin: auto;
+  }
+
+  .speakers .card {
+    padding-bottom: 2rem;
+    margin: 1.1rem 0.1rem;
+    transition: all 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.448) 0px 3px 3px 0px;
+  }
+
+  .speakers .card .text {
+    /* background-color: red; */
+    padding: 1.5rem 0.5rem 1rem 0.8rem;
+    /* padding-left: 30rem; */
+  }
+}
