@@ -9,7 +9,7 @@
   margin: 2rem auto 0 auto;
   border-radius: 0.5rem;
   object-fit: cover;
- height: 350px;
+ height: 300px;
   min-width: 250px;
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
@@ -63,10 +63,11 @@
   padding-bottom: 2rem;
   margin: 1.5rem 1.5rem;
   transition: all 0.3s ease;
+  width: 100%;
   box-shadow: rgba(0, 0, 0, 0.448) 0px 3px 3px 0px;
 }
 .speakers .card .text {
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 2rem 1rem 1rem 1rem;
   /* padding-left: 30rem; */
 }
 
@@ -106,7 +107,7 @@
 
 .speakers .card .main-btn {
   color: white;
-  background-color: #25252e;
+  background-color: #28282edc;
   font-size: 1.1rem;
   border-radius: 4px;
   margin-top: 1rem;
@@ -115,13 +116,12 @@
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .speakers .card .main-btn:hover {
-  background-color: rgba(5, 5, 27, 0.984);
-  
-  border: 0.7px solid #cc941c;
+  background-color:  #28282ef2;
+  border: 0.7px solid #f3f1ee;
 }
 
 .speakers .card .main-btn span {
-  font-size: 19px;
+  font-size: 1rem;
   margin-right: 2px;
 }
 

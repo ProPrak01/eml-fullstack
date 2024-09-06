@@ -1,0 +1,11 @@
+#admin {
+    padding-top:5rem ;
+}
+
+.admin-container {
+    max-width: 35%;
+}
+
+form label {
+    color: white;
+}

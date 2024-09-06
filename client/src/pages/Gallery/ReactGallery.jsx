@@ -84,9 +84,9 @@ export default function ReactGallery() {
       }
 
       <Masonry columnsCount={colCount} gutter="12px" className="container gallery-container">
-      <h1>Page is under developement</h1>
+      {/* <h1>Page is under developement</h1> */}
 
-        {/* {ImagesData.map((image, i) => (
+        {ImagesData.map((image, i) => (
           <img
             key={i}
             src={image}
@@ -94,7 +94,7 @@ export default function ReactGallery() {
             onClick={() => viewImage(image, i)}
             data-aos="fade-up" data-aos-offset="100" data-aos-duration="350"
           />
-        ))} */}
+        ))}
       </Masonry>
     </>
   );

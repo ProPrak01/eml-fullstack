@@ -7,6 +7,7 @@ import HomeSnap from "./pages/HomeFolder/HomeSnap";
 import TeamMain from "./pages/TeamFolder/TeamMain";
 import ContactUsMain from "./pages/ContactUs/ContactUsMain";
 import GalleryMain from "./pages/Gallery/GalleryMain";
+import AdminMain from "./pages/admin/AdminMain";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="/team" element={<TeamMain />} />
           <Route path="/contactus" element={<ContactUsMain />} />
           <Route path="/gallery" element={<GalleryMain />} />
+          <Route path="/admin" element={<AdminMain />} />
+
         </Routes>
       </div>
     </>

@@ -9,14 +9,14 @@ export default function Footer() {
             <div className="footer-basic container">
                 <footer>
                     <div className="row ">
-                        <div className="col-lg-3 col-md-4  footer-img d-flex justify-content-center align-items-center">
+                        <div className="col-lg-4 col-md-4  footer-img d-flex justify-content-center align-items-center">
                             <img
                                 className="img-fluid"
                                 src={emlBannerLogo}
                                 alt=""
                             />
                         </div>
-                        <div className="col-lg-9 col-md-8 d-flex flex-column justify-content-center align-items-center">
+                        <div className="col-lg-8 col-md-8 d-flex flex-column justify-content-center align-items-center">
                             <div className="social">
                                 <a href="mailto:head@eml-iitm.org"><i className="fa-solid fa-envelope"></i></a>
                                 <a href="https://www.youtube.com/c/emliitm"><i className="fa-brands fa-youtube"></i></a>

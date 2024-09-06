@@ -66,6 +66,10 @@
   height: 50px;
 } */
 
+.footer-img img {
+  width: 75%;
+}
+
 
 
 #contactus .footer-wrap, #team {

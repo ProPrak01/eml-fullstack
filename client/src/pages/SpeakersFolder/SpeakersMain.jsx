@@ -6,19 +6,23 @@ import Axios from "axios";
 import Footer from "../../components/Footer/Footer";
 
 export default function SpeakersMain() {
-    // let speakerData = [];
-    const [speakerData, setSpeakerData] = useState([]);
+  // let speakerData = [];
+  const [speakerData, setSpeakerData] = useState([]);
 
-    
-
-  Axios.get("http://localhost:2500/api/speakers").then((response) => {
-    // console.log(response);
-    response.data.forEach(element => {
-        // speakerData.push(element);
-        setSpeakerData(speakerData => [...speakerData, element])
+  useEffect(() => {
+    Axios.get("http://localhost:2500/api/speakers").then((response) => {
+    // react strict mode is disabled coz it was rendering useEffect twice
+      setSpeakerData((speakerData) => [
+        ...speakerData,
+        ...response.data,
+      ]);
+      // response.data.forEach((element) => {
+      //   // speakerData.push(element);
+      //   setSpeakerData((speakerData) => [...speakerData, element]);
+      // });
     });
-
-  });
+    // console.log("Use effect is called");
+  }, []);
 
   // console.log(speakerData);
   return (
