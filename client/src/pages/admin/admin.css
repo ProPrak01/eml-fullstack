@@ -292,8 +292,9 @@
 
 .login-container {
   max-width: 400px;
+  max-height: 400px;
   margin: 100px auto;
-  padding: 2rem;
+  padding: 5rem;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
