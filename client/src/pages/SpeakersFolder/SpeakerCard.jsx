@@ -1,24 +1,70 @@
-import React from 'react'
-import default_speaker_photo from '../../Images/speaker/default_speaker_photo.png'
+import React, { useState } from "react";
+import stock_photo_1 from "../../Images/stockPhotos/img1.png";
+import stock_photo_2 from "../../Images/stockPhotos/img3.png";
+import stock_photo_3 from "../../Images/stockPhotos/img2.png";
 
 export default function SpeakerCard(props) {
+  const [showVideo, setShowVideo] = useState(false);
+  const { name, lecture_title, description, image, yt_link } = props.data;
 
-    // console.log(props.data);
-    const {name, lecture_title,description,image,yt_link} = props.data;
-    return (
-        <div className="col-lg-6 order-md-1 image-class">
-            <div className="card">
-                <div className="d-flex justify-content-center align-items-center">
-                    <img src={image ? image : default_speaker_photo} className="img-fluid" alt="" />
-                </div>
-                <div className="text">
-                    <h1>{name}</h1>
-                    <h4>{lecture_title}</h4>
-                    <p>{description}</p>
+  const getRandomStockPhoto = () => {
+    const stockPhotos = [stock_photo_1, stock_photo_2, stock_photo_3];
+    const randomIndex = Math.floor(Math.random() * stockPhotos.length);
+    return stockPhotos[randomIndex];
+  };
 
-                    <button className="btn btn-lg main-btn"><i class="fa-brands fa-youtube"> </i><a href={yt_link} target="_blank" rel="noopener noreferrer">  Watch  </a></button>
-                </div>
-            </div>
+  const getYoutubeVideoId = (url) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url?.match(regExp);
+    return match && match[2].length === 11 ? match[2] : null;
+  };
+
+  const videoId = getYoutubeVideoId(yt_link);
+  const displayImage = image || getRandomStockPhoto();
+
+  return (
+    <div className="col-lg-6 order-md-1">
+      <div className="speaker-card">
+        <div className="card-content">
+          <div className="speaker-image">
+            {showVideo && videoId ? (
+              <div className="video-container-in-image">
+                <iframe
+                  src={`https://www.youtube.com/embed/${videoId}`}
+                  title={lecture_title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ) : (
+              <img 
+                src={displayImage} 
+                alt={name || "Speaker"} 
+                onError={(e) => {
+                  e.target.src = getRandomStockPhoto();
+                  e.target.onerror = null;
+                }}
+              />
+            )}
+          </div>
+          <div className="speaker-info">
+            <h2>{name}</h2>
+            <h4>{lecture_title}</h4>
+            <p>{description}</p>
+
+            {yt_link && (
+              <button
+                className="watch-btn"
+                onClick={() => setShowVideo(!showVideo)}
+              >
+                <i className="fa-brands fa-youtube"></i>
+                {showVideo ? " Show Photo" : " Watch Video"}
+              </button>
+            )}
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }

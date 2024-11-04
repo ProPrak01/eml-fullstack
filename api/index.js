@@ -1,9 +1,12 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import teamRoutes from "./routes/teamRoutes.js"
-import speakerRoutes from "./routes/speakerRoutes.js"
-import cors from "cors"
+import teamRoutes from "./routes/teamRoutes.js";
+import speakerRoutes from "./routes/speakerRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
+import galleryRoutes from "./routes/galleryRoutes.js";
+
+import cors from "cors";
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -11,11 +14,10 @@ app.use(express.json());
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 
-app.use('/api/team', teamRoutes); 
-app.use('/api/speakers', speakerRoutes);
-
-
-
+app.use("/api/team", teamRoutes);
+app.use("/api/speakers", speakerRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/gallery", galleryRoutes);
 
 const connect = async () => {
   try {

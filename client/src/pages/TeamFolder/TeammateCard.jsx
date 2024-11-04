@@ -1,54 +1,47 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import TeammateData from './TeammateData';
-// import Fade from 'react-reveal/Fade';
+import React, { useState } from "react";
+import "./team.css";
 
-export default function TeammateCard(props) {
+export default function TeammateCard({ data }) {
+  const [imageError, setImageError] = useState(false);
+  const { name, position, photo, vertical } = data;
 
-    const { name, posn } = props.data;
+  let cardClass = "teammate-card";
+  if (position === "Faculty Advisor") {
+    cardClass += " full-width";
+  } else if (position === "Student Head") {
+    cardClass += " half-width";
+  } else {
+    cardClass += " third-width";
+  }
 
-    var bootstrapClass;
-    if (posn === "Faculty Advisor") {
-        bootstrapClass = "col-12"
-    }
-    else if (posn === "Student Head") {
-        bootstrapClass = "col-md-6"
-    }
-    else {
-        bootstrapClass = "col-md-4"
-    }
-
-
-
-    return (
-        <div className={`${bootstrapClass} image-class d-flex justify-content-center align-items-center`}>
-            {/* <Fade top distance = {"20px"} > */}
-            <div className="card " data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
-
-                {/* {vertical ? <div className="vertical d-flex justify-content-center align-items-center"><h1> {vertical} </h1></div> : <><img src={img} className="img-fluid" alt="" /> */}
-                <div className="text">
-
-                    <h3>{name}</h3>
-                    <h4>{posn}</h4>
-                </div>
-
+  return (
+    <div className={cardClass}>
+      <div className="card">
+        <div className="image-container">
+          <img
+            src={photo}
+            alt={name}
+            onError={(e) => {
+              console.error("Image failed to load:", photo);
+              setImageError(true);
+            }}
+            loading="lazy"
+            crossOrigin="anonymous"
+          />
+          {imageError && (
+            <div className="image-error">Image not available</div>
+          )}
+          {vertical && (
+            <div className="vertical-overlay">
+              <h1>{vertical}</h1>
             </div>
-            {/* </Fade> */}
+          )}
         </div>
-        // <Card style={{ width: '18rem' }}>
-        //     {TeammateData.map((name, posn, img, index) => (
-        //     <Card.Img variant="top" src="holder.js/100px180" />
-        //     <Card.Body>
-        //         <Card.Title>Card Title</Card.Title>
-        //         <Card.Text>
-        //             Some quick example text to build on the card title and make up the
-        //             bulk of the card's content.
-        //         </Card.Text>
-        //         <Button variant="primary">Go somewhere</Button>
-        //     </Card.Body>
-        //     ))}
-
-        // </Card>
-    )
+        <div className="text">
+          <h3>{name}</h3>
+          <h4>{position}</h4>
+        </div>
+      </div>
+    </div>
+  );
 }

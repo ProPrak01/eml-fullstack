@@ -12,6 +12,9 @@ body {
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
     rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   transition: all 0.2s ease;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 #gallery img:hover {
@@ -75,4 +78,15 @@ body {
   .cross-btn {
     top: 25%;
   }
+}
+
+.gallery-item {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
 }

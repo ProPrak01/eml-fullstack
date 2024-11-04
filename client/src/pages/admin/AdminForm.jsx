@@ -11,7 +11,7 @@ export default function AdminForm() {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:2500/api/speakers", {
+      await axios.post("http://localhost:8000/api/speakers", {
         name: speakerName,
         lecture_title: lecTitle,
         description: speakerDesc,
