@@ -62,6 +62,12 @@ DELETE /api/auth/admin-emails/:email
 - Removes an admin email address
 - Requires: Admin authentication
 ```
+### API ENV STRUCTURE:
+PORT = 8000
+MONGO = "mongodb+srv://........mongodb.net/"
+CLOUDINARY_CLOUD_NAME=.....
+CLOUDINARY_API_KEY=6......
+CLOUDINARY_API_SECRET=_NZ.....
 
 # About EML (Extra Mural Lectures, IITM) 
 The Extra-Mural Lectures (EML) is the flagship lecture body of IITMadras that focuses on enhancing the learning of the students beyond the classroom. The EML series of IIT Madras was launched in the early 1980s by a group of enterprising students with strong encouragement and support from the institute. Over the years, this group has expanded into a formal student body that has been amplifying its outreach to the students at large. 
